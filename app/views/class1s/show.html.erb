@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @class1.name %>
+</p>
+
+<table>
+	<tr><th>student name </th><th>student age</th><th>operation</th></tr>
+
+	<% @class1.student2s.each do |stu| %>
+	<tr><td><%= stu.name%></td><td><%= stu.age%></td><td><%= link_to 'Show', stu %>
+        <%= link_to 'Edit', edit_student2_path(stu) %>
+        <%= link_to 'Destroy', stu, method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>
+	<% end %>
+
+</table>
+<%= link_to 'New Student2', new_student2_path %>
+<%= link_to 'Edit', edit_class1_path(@class1) %> |
+<%= link_to 'Back', class1s_path %>
